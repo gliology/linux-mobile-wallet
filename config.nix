@@ -2,18 +2,29 @@
 
 let
   terminal = pkgs.kgx.override { genericBranding = true; };
-in {
 
+  stylo_apk = pkgs.fetchurl {
+    url = "https://github.com/stylo-app/stylo/releases/download/v0.9.5/stylo-v0.9.5.apk";
+    sha256 = "orjJgpXDUnv5F2JWnj96jerW2qt/u710PMn8Qx2WKCI=";
+  };
+
+in {
+  # Experimental waydroid support
   virtualisation.waydroid.enable = true;
 
-  users.users.wallet = {
+  environment.etc."stylo.apk".source = stylo_apk;
+
+  boot.kernelParams = [
+    # This should keep lmkd happy
+    "psi=1"
+  ];
+
+  # Default user to user
+  users.users.owner = {
     isNormalUser = true;
 
     password = "0000";
 
-    home = "/home/wallet";
-
-    createHome = true;
     extraGroups = [
       "wheel"
       "networkmanager"
@@ -23,11 +34,10 @@ in {
     ];
     uid = 1000;
     openssh.authorizedKeys.keys = [
-      # TODO add keys
+      # FIXME For development only, disable sshd in production
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFGhx6Q6QDVPWTepEmYigYJxakpgn7Ur09NNGvMUxU6i cardno:000616395444"
     ];
   };
-
-  users.users.root.password = "000000";
 
   # "desktop" environment configuration
   powerManagement.enable = true;
@@ -122,8 +132,6 @@ in {
 
   # Ensures this demo rootfs is useable for platforms requiring FBIOPAN_DISPLAY.
   mobile.quirks.fb-refresher.enable = true;
-
-  mobile.quirks.u-boot.package = lib.mkForce (pkgs.callPackage ./u-boot.nix {});
 
   # Okay, systemd-udev-settle times out... no idea why yet...
   # Though, it seems fine to simply disable it.

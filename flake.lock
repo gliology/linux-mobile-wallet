@@ -3,26 +3,27 @@
     "mobile-nixos": {
       "flake": false,
       "locked": {
-        "lastModified": 1636495462,
-        "narHash": "sha256-N6YC0Lp+IyJbk9EmCSo3nZbautVtHOLhOED99/ptZDU=",
-        "owner": "NixOS",
+        "lastModified": 1637708275,
+        "narHash": "sha256-O0N3H7G8OwVFI6m/LwYkdUMnKGkyEs2Seyz6reB/o74=",
+        "owner": "FlorianFranzen",
         "repo": "mobile-nixos",
-        "rev": "d858074f0d38fbd6a33195410cf641b0cf27d809",
+        "rev": "0ee17d9211ee64bc3efa11e53c6b66120dc53859",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
+        "owner": "FlorianFranzen",
+        "ref": "develop",
         "repo": "mobile-nixos",
         "type": "github"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1635792138,
-        "narHash": "sha256-D79GqaYrwgyM4wvOPbQeKveAHROnVh97F36iSGZO9uA=",
+        "lastModified": 1637595801,
+        "narHash": "sha256-LkIMwVFKCuEqidaUdg8uxwpESAXjsPo4oCz3eJ7RaRw=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "b165ce0c4efbb74246714b5c66b6bcdce8cde175",
+        "rev": "263ef4cc4146c9fab808085487438c625d4426a9",
         "type": "github"
       },
       "original": {
