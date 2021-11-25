@@ -3,11 +3,11 @@
     "mobile-nixos": {
       "flake": false,
       "locked": {
-        "lastModified": 1637708275,
-        "narHash": "sha256-O0N3H7G8OwVFI6m/LwYkdUMnKGkyEs2Seyz6reB/o74=",
+        "lastModified": 1637837507,
+        "narHash": "sha256-FDneMrwBycp6qy0K1fd36EVk2VIuBNn7i5rzkKN2kGM=",
         "owner": "FlorianFranzen",
         "repo": "mobile-nixos",
-        "rev": "0ee17d9211ee64bc3efa11e53c6b66120dc53859",
+        "rev": "d7aac95baac2d6f4497ca27d9a2ad9564639223b",
         "type": "github"
       },
       "original": {
