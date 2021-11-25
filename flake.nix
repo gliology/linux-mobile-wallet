@@ -28,7 +28,9 @@
 
     # FIXME We abuse the system notation here expecting a host with binfmt
     packages.x86_64-linux = derivations;
+    packages.aarch64-linux = derivations;
 
     defaultPackage.x86_64-linux = self.packages.x86_64-linux.default;
+    defaultPackage.aarch64-linux = self.packages.aarch64-linux.default;
   };
 }
