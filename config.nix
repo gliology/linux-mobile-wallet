@@ -150,16 +150,20 @@ in {
   users.mutableUsers = false;
 
   nix = {
+    # Enable automatic garbage collection
     gc = {
       automatic = true;
       options = "--delete-older-than 8d";
     };
 
-    # nix flakes
+    # Enable flake support
     package = pkgs.nixUnstable;
     extraOptions = ''
         experimental-features = nix-command flakes
       '';
+
+    # Allow copy closure
+    trustedUsers = [ "root" "@wheel" ];
   };
 
   system.stateVersion = "21.05";
