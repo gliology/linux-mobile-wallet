@@ -1,6 +1,11 @@
 {
   description = "A very basic flake";
 
+  nixConfig = {
+    extra-substituters = "https://linux-mobile-wallet.cachix.org";
+    extra-trusted-public-keys = "linux-mobile-wallet.cachix.org-1:F5/kp+qw/y/nRlPxAafQWyL409ll1prCyeElZLVPJt8=";
+  };
+
   inputs = {
     nixpkgs.url = github:NixOS/nixpkgs/nixos-unstable;
 
